@@ -50,7 +50,7 @@ impl<C: hyper::client::Connect>LemmatronApi for LemmatronApiClient<C> {
             let mut query = ::url::form_urlencoded::Serializer::new(String::new());
             query.finish()
         };
-        let uri_str = format!("{}/inflections/{source_lang}/{word_id}/{filters}?{}", configuration.base_path, query_string, source_lang=source_lang, word_id=word_id, filters=filters.join(",").as_ref());
+        let uri_str = format!("{}/inflections/{source_lang}/{word_id}/{filters}?{}", configuration.base_path, query_string, source_lang=source_lang, word_id=word_id, filters=filters.join(","));
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {

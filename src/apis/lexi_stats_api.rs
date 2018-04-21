@@ -63,7 +63,7 @@ impl<C: hyper::client::Connect>LexiStatsApi for LexiStatsApiClient<C> {
             query.append_pair("limit", &limit.to_string());
             query.finish()
         };
-        let uri_str = format!("{}/stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/?{}", configuration.base_path, query_string, source_lang=source_lang, corpus=corpus, ngram-size=ngram_size);
+        let uri_str = format!("{}/stats/frequency/ngrams/{source_lang}/{corpus}/{ngram_size}/?{}", configuration.base_path, query_string, source_lang=source_lang, corpus=corpus, ngram_size=ngram_size);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
