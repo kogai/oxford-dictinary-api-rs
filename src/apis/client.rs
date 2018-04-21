@@ -26,7 +26,9 @@ impl<C: hyper::client::Connect> APIClient<C> {
       lemmatron_api: Box::new(::apis::LemmatronApiClient::new(rc.clone())),
       lexi_stats_api: Box::new(::apis::LexiStatsApiClient::new(rc.clone())),
       search_api: Box::new(::apis::SearchApiClient::new(rc.clone())),
-      the_sentence_dictionary_api: Box::new(::apis::TheSentenceDictionaryApiClient::new(rc.clone())),
+      the_sentence_dictionary_api: Box::new(
+        ::apis::TheSentenceDictionaryApiClient::new(rc.clone()),
+      ),
       thesaurus_api: Box::new(::apis::ThesaurusApiClient::new(rc.clone())),
       translation_api: Box::new(::apis::TranslationApiClient::new(rc.clone())),
       utility_api: Box::new(::apis::UtilityApiClient::new(rc.clone())),
@@ -34,41 +36,39 @@ impl<C: hyper::client::Connect> APIClient<C> {
     }
   }
 
-  pub fn dictionary_entries_api(&self) -> &::apis::DictionaryEntriesApi{
+  pub fn dictionary_entries_api(&self) -> &::apis::DictionaryEntriesApi {
     self.dictionary_entries_api.as_ref()
   }
 
-  pub fn lemmatron_api(&self) -> &::apis::LemmatronApi{
+  pub fn lemmatron_api(&self) -> &::apis::LemmatronApi {
     self.lemmatron_api.as_ref()
   }
 
-  pub fn lexi_stats_api(&self) -> &::apis::LexiStatsApi{
+  pub fn lexi_stats_api(&self) -> &::apis::LexiStatsApi {
     self.lexi_stats_api.as_ref()
   }
 
-  pub fn search_api(&self) -> &::apis::SearchApi{
+  pub fn search_api(&self) -> &::apis::SearchApi {
     self.search_api.as_ref()
   }
 
-  pub fn the_sentence_dictionary_api(&self) -> &::apis::TheSentenceDictionaryApi{
+  pub fn the_sentence_dictionary_api(&self) -> &::apis::TheSentenceDictionaryApi {
     self.the_sentence_dictionary_api.as_ref()
   }
 
-  pub fn thesaurus_api(&self) -> &::apis::ThesaurusApi{
+  pub fn thesaurus_api(&self) -> &::apis::ThesaurusApi {
     self.thesaurus_api.as_ref()
   }
 
-  pub fn translation_api(&self) -> &::apis::TranslationApi{
+  pub fn translation_api(&self) -> &::apis::TranslationApi {
     self.translation_api.as_ref()
   }
 
-  pub fn utility_api(&self) -> &::apis::UtilityApi{
+  pub fn utility_api(&self) -> &::apis::UtilityApi {
     self.utility_api.as_ref()
   }
 
-  pub fn wordlist_api(&self) -> &::apis::WordlistApi{
+  pub fn wordlist_api(&self) -> &::apis::WordlistApi {
     self.wordlist_api.as_ref()
   }
-
-
 }
