@@ -1,5 +1,5 @@
 [package]
-name = "swagger"
+name = "oxford_dictionary_api_rs"
 version = "1.0.0"
 authors = ["Swagger Codegen team and contributors"]
 
