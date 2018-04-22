@@ -197,6 +197,9 @@ impl<C: hyper::client::Connect> DictionaryEntriesApi for DictionaryEntriesApiCli
                     }
                 })
                 .and_then(|body| {
+                    let mut buf = String::from_utf8(body.to_vec()).unwrap();
+                    println!("{}", buf);
+
                     let parsed: Result<::models::RetrieveEntry, _> = serde_json::from_slice(&body);
                     parsed.map_err(|e| Error::from(e))
                 }),

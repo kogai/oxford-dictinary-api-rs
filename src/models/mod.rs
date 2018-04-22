@@ -12,6 +12,8 @@ mod cross_references_list;
 pub use self::cross_references_list::CrossReferencesList;
 mod cross_references_list_inner;
 pub use self::cross_references_list_inner::CrossReferencesListInner;
+mod derivative;
+pub use self::derivative::Derivative;
 mod entry;
 pub use self::entry::Entry;
 mod examples_list;

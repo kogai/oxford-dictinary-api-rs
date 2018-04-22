@@ -15,7 +15,7 @@ use serde_json::Value;
 pub struct ArrayOfRelatedEntriesInner {
   /// A subject, discipline, or branch of knowledge particular to the Sense
   #[serde(rename = "domains")]
-  domains: Option<::models::Arrayofstrings>,
+  domains: Option<Vec<String>>,
   /// The identifier of the word
   #[serde(rename = "id")]
   id: String,
@@ -24,10 +24,10 @@ pub struct ArrayOfRelatedEntriesInner {
   language: Option<String>,
   /// A particular area in which the pronunciation occurs, e.g. 'Great Britain'
   #[serde(rename = "regions")]
-  regions: Option<::models::Arrayofstrings>,
+  regions: Option<Vec<String>>,
   /// A level of language usage, typically with respect to formality. e.g. 'offensive', 'informal'
   #[serde(rename = "registers")]
-  registers: Option<::models::Arrayofstrings>,
+  registers: Option<Vec<String>>,
   #[serde(rename = "text")]
   text: String,
 }
@@ -44,16 +44,16 @@ impl ArrayOfRelatedEntriesInner {
     }
   }
 
-  pub fn set_domains(&mut self, domains: ::models::Arrayofstrings) {
+  pub fn set_domains(&mut self, domains: Vec<String>) {
     self.domains = Some(domains);
   }
 
-  pub fn with_domains(mut self, domains: ::models::Arrayofstrings) -> ArrayOfRelatedEntriesInner {
+  pub fn with_domains(mut self, domains: Vec<String>) -> ArrayOfRelatedEntriesInner {
     self.domains = Some(domains);
     self
   }
 
-  pub fn domains(&self) -> Option<&::models::Arrayofstrings> {
+  pub fn domains(&self) -> Option<&Vec<String>> {
     self.domains.as_ref()
   }
 
@@ -91,16 +91,16 @@ impl ArrayOfRelatedEntriesInner {
     self.language = None;
   }
 
-  pub fn set_regions(&mut self, regions: ::models::Arrayofstrings) {
+  pub fn set_regions(&mut self, regions: Vec<String>) {
     self.regions = Some(regions);
   }
 
-  pub fn with_regions(mut self, regions: ::models::Arrayofstrings) -> ArrayOfRelatedEntriesInner {
+  pub fn with_regions(mut self, regions: Vec<String>) -> ArrayOfRelatedEntriesInner {
     self.regions = Some(regions);
     self
   }
 
-  pub fn regions(&self) -> Option<&::models::Arrayofstrings> {
+  pub fn regions(&self) -> Option<&Vec<String>> {
     self.regions.as_ref()
   }
 
@@ -108,19 +108,16 @@ impl ArrayOfRelatedEntriesInner {
     self.regions = None;
   }
 
-  pub fn set_registers(&mut self, registers: ::models::Arrayofstrings) {
+  pub fn set_registers(&mut self, registers: Vec<String>) {
     self.registers = Some(registers);
   }
 
-  pub fn with_registers(
-    mut self,
-    registers: ::models::Arrayofstrings,
-  ) -> ArrayOfRelatedEntriesInner {
+  pub fn with_registers(mut self, registers: Vec<String>) -> ArrayOfRelatedEntriesInner {
     self.registers = Some(registers);
     self
   }
 
-  pub fn registers(&self) -> Option<&::models::Arrayofstrings> {
+  pub fn registers(&self) -> Option<&Vec<String>> {
     self.registers.as_ref()
   }
 
