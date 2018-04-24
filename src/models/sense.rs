@@ -19,7 +19,7 @@ pub struct Sense {
   #[serde(rename = "crossReferenceMarkers")]
   cross_reference_markers: Option<Vec<String>>,
   #[serde(rename = "crossReferences")]
-  cross_references: Option<::models::CrossReferencesList>,
+  cross_references: Option<Vec<::models::CrossReferencesListInner>>,
   /// A list of statements of the exact meaning of a word
   #[serde(rename = "definitions")]
   definitions: Option<Vec<String>>,
@@ -54,7 +54,7 @@ pub struct Sense {
   translations: Option<::models::TranslationsList>,
   /// Various words that are used interchangeably depending on the context, e.g 'duck' and 'duck boat'
   #[serde(rename = "variantForms")]
-  variant_forms: Option<::models::VariantFormsList>,
+  variant_forms: Option<Vec<::models::VariantFormsListInner>>,
 }
 
 impl Sense {
@@ -96,16 +96,16 @@ impl Sense {
     self.cross_reference_markers = None;
   }
 
-  pub fn set_cross_references(&mut self, cross_references: ::models::CrossReferencesList) {
+  pub fn set_cross_references(&mut self, cross_references: Vec<::models::CrossReferencesListInner>) {
     self.cross_references = Some(cross_references);
   }
 
-  pub fn with_cross_references(mut self, cross_references: ::models::CrossReferencesList) -> Sense {
+  pub fn with_cross_references(mut self, cross_references: Vec<::models::CrossReferencesListInner>) -> Sense {
     self.cross_references = Some(cross_references);
     self
   }
 
-  pub fn cross_references(&self) -> Option<&::models::CrossReferencesList> {
+  pub fn cross_references(&self) -> Option<&Vec<::models::CrossReferencesListInner>> {
     self.cross_references.as_ref()
   }
 
@@ -317,16 +317,16 @@ impl Sense {
     self.translations = None;
   }
 
-  pub fn set_variant_forms(&mut self, variant_forms: ::models::VariantFormsList) {
+  pub fn set_variant_forms(&mut self, variant_forms: Vec<::models::VariantFormsListInner>) {
     self.variant_forms = Some(variant_forms);
   }
 
-  pub fn with_variant_forms(mut self, variant_forms: ::models::VariantFormsList) -> Sense {
+  pub fn with_variant_forms(mut self, variant_forms: Vec<::models::VariantFormsListInner>) -> Sense {
     self.variant_forms = Some(variant_forms);
     self
   }
 
-  pub fn variant_forms(&self) -> Option<&::models::VariantFormsList> {
+  pub fn variant_forms(&self) -> Option<&Vec<::models::VariantFormsListInner>> {
     self.variant_forms.as_ref()
   }
 

@@ -17,7 +17,7 @@ pub struct TranslationsListInner {
   #[serde(rename = "domains")]
   domains: Option<Vec<String>>,
   #[serde(rename = "grammaticalFeatures")]
-  grammatical_features: Option<::models::GrammaticalFeaturesList>,
+  grammatical_features: Option<Vec<::models::GrammaticalFeaturesListInner>>,
   /// IANA language code specifying the language of the translation
   #[serde(rename = "language")]
   language: String,
@@ -65,20 +65,20 @@ impl TranslationsListInner {
 
   pub fn set_grammatical_features(
     &mut self,
-    grammatical_features: ::models::GrammaticalFeaturesList,
+    grammatical_features: Vec<::models::GrammaticalFeaturesListInner>,
   ) {
     self.grammatical_features = Some(grammatical_features);
   }
 
   pub fn with_grammatical_features(
     mut self,
-    grammatical_features: ::models::GrammaticalFeaturesList,
+    grammatical_features: Vec<::models::GrammaticalFeaturesListInner>,
   ) -> TranslationsListInner {
     self.grammatical_features = Some(grammatical_features);
     self
   }
 
-  pub fn grammatical_features(&self) -> Option<&::models::GrammaticalFeaturesList> {
+  pub fn grammatical_features(&self) -> Option<&Vec<::models::GrammaticalFeaturesListInner>> {
     self.grammatical_features.as_ref()
   }
 

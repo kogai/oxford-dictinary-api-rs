@@ -17,14 +17,14 @@ use serde_json::Value;
 pub struct LexicalEntry {
   /// Other words from which this one derives
   #[serde(rename = "derivativeOf")]
-  derivative_of: Option<::models::ArrayOfRelatedEntries>,
+  derivative_of: Option<Vec<::models::ArrayOfRelatedEntriesInner>>,
   /// Other words from which their Sense derives
   #[serde(rename = "derivatives")]
   derivatives: Option<Vec<::models::Derivative>>,
   #[serde(rename = "entries")]
   entries: Option<Vec<::models::Entry>>,
   #[serde(rename = "grammaticalFeatures")]
-  grammatical_features: Option<::models::GrammaticalFeaturesList>,
+  grammatical_features: Option<Vec<::models::GrammaticalFeaturesListInner>>,
   /// IANA language code
   #[serde(rename = "language")]
   language: String,
@@ -40,7 +40,7 @@ pub struct LexicalEntry {
   text: String,
   /// Various words that are used interchangeably depending on the context, e.g 'a' and 'an'
   #[serde(rename = "variantForms")]
-  variant_forms: Option<::models::VariantFormsList>,
+  variant_forms: Option<Vec<::models::VariantFormsListInner>>,
 }
 
 impl LexicalEntry {
@@ -60,19 +60,19 @@ impl LexicalEntry {
     }
   }
 
-  pub fn set_derivative_of(&mut self, derivative_of: ::models::ArrayOfRelatedEntries) {
+  pub fn set_derivative_of(&mut self, derivative_of: Vec<::models::ArrayOfRelatedEntriesInner>) {
     self.derivative_of = Some(derivative_of);
   }
 
   pub fn with_derivative_of(
     mut self,
-    derivative_of: ::models::ArrayOfRelatedEntries,
+    derivative_of: Vec<::models::ArrayOfRelatedEntriesInner>,
   ) -> LexicalEntry {
     self.derivative_of = Some(derivative_of);
     self
   }
 
-  pub fn derivative_of(&self) -> Option<&::models::ArrayOfRelatedEntries> {
+  pub fn derivative_of(&self) -> Option<&Vec<::models::ArrayOfRelatedEntriesInner>> {
     self.derivative_of.as_ref()
   }
 
@@ -116,20 +116,20 @@ impl LexicalEntry {
 
   pub fn set_grammatical_features(
     &mut self,
-    grammatical_features: ::models::GrammaticalFeaturesList,
+    grammatical_features: Vec<::models::GrammaticalFeaturesListInner>,
   ) {
     self.grammatical_features = Some(grammatical_features);
   }
 
   pub fn with_grammatical_features(
     mut self,
-    grammatical_features: ::models::GrammaticalFeaturesList,
+    grammatical_features: Vec<::models::GrammaticalFeaturesListInner>,
   ) -> LexicalEntry {
     self.grammatical_features = Some(grammatical_features);
     self
   }
 
-  pub fn grammatical_features(&self) -> Option<&::models::GrammaticalFeaturesList> {
+  pub fn grammatical_features(&self) -> Option<&Vec<::models::GrammaticalFeaturesListInner>> {
     self.grammatical_features.as_ref()
   }
 
@@ -213,16 +213,16 @@ impl LexicalEntry {
     &self.text
   }
 
-  pub fn set_variant_forms(&mut self, variant_forms: ::models::VariantFormsList) {
+  pub fn set_variant_forms(&mut self, variant_forms: Vec<::models::VariantFormsListInner>) {
     self.variant_forms = Some(variant_forms);
   }
 
-  pub fn with_variant_forms(mut self, variant_forms: ::models::VariantFormsList) -> LexicalEntry {
+  pub fn with_variant_forms(mut self, variant_forms: Vec<::models::VariantFormsListInner>) -> LexicalEntry {
     self.variant_forms = Some(variant_forms);
     self
   }
 
-  pub fn variant_forms(&self) -> Option<&::models::VariantFormsList> {
+  pub fn variant_forms(&self) -> Option<&Vec<::models::VariantFormsListInner>> {
     self.variant_forms.as_ref()
   }
 

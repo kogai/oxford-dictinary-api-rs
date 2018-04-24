@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LemmatronLexicalEntry {
   #[serde(rename = "grammaticalFeatures")]
-  grammatical_features: Option<::models::GrammaticalFeaturesList>,
+  grammatical_features: Option<Vec<::models::GrammaticalFeaturesListInner>>,
   /// The canonical form of words for which the entry is an inflection
   #[serde(rename = "inflectionOf")]
   inflection_of: ::models::InflectionsList,
@@ -43,16 +43,16 @@ impl LemmatronLexicalEntry {
     }
   }
 
-  pub fn set_grammatical_features(&mut self, grammatical_features: ::models::GrammaticalFeaturesList) {
+  pub fn set_grammatical_features(&mut self, grammatical_features: Vec<::models::GrammaticalFeaturesListInner>) {
     self.grammatical_features = Some(grammatical_features);
   }
 
-  pub fn with_grammatical_features(mut self, grammatical_features: ::models::GrammaticalFeaturesList) -> LemmatronLexicalEntry {
+  pub fn with_grammatical_features(mut self, grammatical_features: Vec<::models::GrammaticalFeaturesListInner>) -> LemmatronLexicalEntry {
     self.grammatical_features = Some(grammatical_features);
     self
   }
 
-  pub fn grammatical_features(&self) -> Option<&::models::GrammaticalFeaturesList> {
+  pub fn grammatical_features(&self) -> Option<&Vec<::models::GrammaticalFeaturesListInner>> {
     self.grammatical_features.as_ref()
   }
 

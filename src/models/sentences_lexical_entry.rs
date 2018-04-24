@@ -16,7 +16,7 @@ use serde_json::Value;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct SentencesLexicalEntry {
   #[serde(rename = "grammaticalFeatures")]
-  grammatical_features: Option<::models::GrammaticalFeaturesList>,
+  grammatical_features: Option<Vec<::models::GrammaticalFeaturesListInner>>,
   /// IANA language code
   #[serde(rename = "language")]
   language: String,
@@ -43,16 +43,16 @@ impl SentencesLexicalEntry {
     }
   }
 
-  pub fn set_grammatical_features(&mut self, grammatical_features: ::models::GrammaticalFeaturesList) {
+  pub fn set_grammatical_features(&mut self, grammatical_features: Vec<::models::GrammaticalFeaturesListInner>) {
     self.grammatical_features = Some(grammatical_features);
   }
 
-  pub fn with_grammatical_features(mut self, grammatical_features: ::models::GrammaticalFeaturesList) -> SentencesLexicalEntry {
+  pub fn with_grammatical_features(mut self, grammatical_features: Vec<::models::GrammaticalFeaturesListInner>) -> SentencesLexicalEntry {
     self.grammatical_features = Some(grammatical_features);
     self
   }
 
-  pub fn grammatical_features(&self) -> Option<&::models::GrammaticalFeaturesList> {
+  pub fn grammatical_features(&self) -> Option<&Vec<::models::GrammaticalFeaturesListInner>> {
     self.grammatical_features.as_ref()
   }
 

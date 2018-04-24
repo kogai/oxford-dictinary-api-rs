@@ -30,7 +30,7 @@ pub struct Entry {
   senses: Option<Vec<::models::Sense>>,
   /// Various words that are used interchangeably depending on the context, e.g 'a' and 'an'
   #[serde(rename = "variantForms")]
-  variant_forms: Option<::models::VariantFormsList>,
+  variant_forms: Option<Vec<::models::VariantFormsListInner>>,
 }
 
 impl Entry {
@@ -157,16 +157,16 @@ impl Entry {
     self.senses = None;
   }
 
-  pub fn set_variant_forms(&mut self, variant_forms: ::models::VariantFormsList) {
+  pub fn set_variant_forms(&mut self, variant_forms: Vec<::models::VariantFormsListInner>) {
     self.variant_forms = Some(variant_forms);
   }
 
-  pub fn with_variant_forms(mut self, variant_forms: ::models::VariantFormsList) -> Entry {
+  pub fn with_variant_forms(mut self, variant_forms: Vec<::models::VariantFormsListInner>) -> Entry {
     self.variant_forms = Some(variant_forms);
     self
   }
 
-  pub fn variant_forms(&self) -> Option<&::models::VariantFormsList> {
+  pub fn variant_forms(&self) -> Option<&Vec<::models::VariantFormsListInner>> {
     self.variant_forms.as_ref()
   }
 
