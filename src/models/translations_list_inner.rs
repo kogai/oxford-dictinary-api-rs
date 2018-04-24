@@ -22,7 +22,7 @@ pub struct TranslationsListInner {
   #[serde(rename = "language")]
   language: String,
   #[serde(rename = "notes")]
-  notes: Option<::models::CategorizedTextList>,
+  notes: Option<Vec<::models::CategorizedTextListInner>>,
   /// A particular area in which the translation occurs, e.g. 'Great Britain'
   #[serde(rename = "regions")]
   regions: Option<Vec<String>>,
@@ -99,16 +99,16 @@ impl TranslationsListInner {
     &self.language
   }
 
-  pub fn set_notes(&mut self, notes: ::models::CategorizedTextList) {
+  pub fn set_notes(&mut self, notes: Vec<::models::CategorizedTextListInner>) {
     self.notes = Some(notes);
   }
 
-  pub fn with_notes(mut self, notes: ::models::CategorizedTextList) -> TranslationsListInner {
+  pub fn with_notes(mut self, notes: Vec<::models::CategorizedTextListInner>) -> TranslationsListInner {
     self.notes = Some(notes);
     self
   }
 
-  pub fn notes(&self) -> Option<&::models::CategorizedTextList> {
+  pub fn notes(&self) -> Option<&Vec<::models::CategorizedTextListInner>> {
     self.notes.as_ref()
   }
 

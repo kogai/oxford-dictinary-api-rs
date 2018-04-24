@@ -22,7 +22,7 @@ pub struct ThesaurusSense {
   #[serde(rename = "domains")]
   domains: Option<Vec<String>>,
   #[serde(rename = "examples")]
-  examples: Option<::models::ExamplesList>,
+  examples: Option<Vec<::models::ExamplesListInner>>,
   /// The id of the sense that is required for the delete procedure
   #[serde(rename = "id")]
   id: Option<String>,
@@ -89,16 +89,16 @@ impl ThesaurusSense {
     self.domains = None;
   }
 
-  pub fn set_examples(&mut self, examples: ::models::ExamplesList) {
+  pub fn set_examples(&mut self, examples: Vec<::models::ExamplesListInner>) {
     self.examples = Some(examples);
   }
 
-  pub fn with_examples(mut self, examples: ::models::ExamplesList) -> ThesaurusSense {
+  pub fn with_examples(mut self, examples: Vec<::models::ExamplesListInner>) -> ThesaurusSense {
     self.examples = Some(examples);
     self
   }
 
-  pub fn examples(&self) -> Option<&::models::ExamplesList> {
+  pub fn examples(&self) -> Option<&Vec<::models::ExamplesListInner>> {
     self.examples.as_ref()
   }
 

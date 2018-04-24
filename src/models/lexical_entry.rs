@@ -32,7 +32,7 @@ pub struct LexicalEntry {
   #[serde(rename = "lexicalCategory")]
   lexical_category: String,
   #[serde(rename = "notes")]
-  notes: Option<::models::CategorizedTextList>,
+  notes: Option<Vec<::models::CategorizedTextListInner>>,
   #[serde(rename = "pronunciations")]
   pronunciations: Option<Vec<::models::PronunciationsListInner>>,
   /// A given written or spoken realisation of a an entry.
@@ -163,16 +163,16 @@ impl LexicalEntry {
     &self.lexical_category
   }
 
-  pub fn set_notes(&mut self, notes: ::models::CategorizedTextList) {
+  pub fn set_notes(&mut self, notes: Vec<::models::CategorizedTextListInner>) {
     self.notes = Some(notes);
   }
 
-  pub fn with_notes(mut self, notes: ::models::CategorizedTextList) -> LexicalEntry {
+  pub fn with_notes(mut self, notes: Vec<::models::CategorizedTextListInner>) -> LexicalEntry {
     self.notes = Some(notes);
     self
   }
 
-  pub fn notes(&self) -> Option<&::models::CategorizedTextList> {
+  pub fn notes(&self) -> Option<&Vec<::models::CategorizedTextListInner>> {
     self.notes.as_ref()
   }
 

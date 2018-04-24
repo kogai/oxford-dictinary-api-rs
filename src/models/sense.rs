@@ -34,7 +34,7 @@ pub struct Sense {
   #[serde(rename = "notes")]
   notes: Option<Vec<::models::CategorizedTextListInner>>,
   #[serde(rename = "pronunciations")]
-  pronunciations: Option<::models::PronunciationsList>,
+  pronunciations: Option<Vec<::models::PronunciationsListInner>>,
   /// A particular area in which the Sense occurs, e.g. 'Great Britain'
   #[serde(rename = "regions")]
   regions: Option<Vec<String>>,
@@ -51,7 +51,7 @@ pub struct Sense {
   #[serde(rename = "thesaurusLinks")]
   thesaurus_links: Option<Vec<::models::ThesaurusLink>>,
   #[serde(rename = "translations")]
-  translations: Option<::models::TranslationsList>,
+  translations: Option<Vec<::models::TranslationsListInner>>,
   /// Various words that are used interchangeably depending on the context, e.g 'duck' and 'duck boat'
   #[serde(rename = "variantForms")]
   variant_forms: Option<Vec<::models::VariantFormsListInner>>,
@@ -198,16 +198,16 @@ impl Sense {
     self.notes = None;
   }
 
-  pub fn set_pronunciations(&mut self, pronunciations: ::models::PronunciationsList) {
+  pub fn set_pronunciations(&mut self, pronunciations: Vec<::models::PronunciationsListInner>) {
     self.pronunciations = Some(pronunciations);
   }
 
-  pub fn with_pronunciations(mut self, pronunciations: ::models::PronunciationsList) -> Sense {
+  pub fn with_pronunciations(mut self, pronunciations: Vec<::models::PronunciationsListInner>) -> Sense {
     self.pronunciations = Some(pronunciations);
     self
   }
 
-  pub fn pronunciations(&self) -> Option<&::models::PronunciationsList> {
+  pub fn pronunciations(&self) -> Option<&Vec<::models::PronunciationsListInner>> {
     self.pronunciations.as_ref()
   }
 
@@ -300,16 +300,16 @@ impl Sense {
     self.thesaurus_links = None;
   }
 
-  pub fn set_translations(&mut self, translations: ::models::TranslationsList) {
+  pub fn set_translations(&mut self, translations: Vec<::models::TranslationsListInner>) {
     self.translations = Some(translations);
   }
 
-  pub fn with_translations(mut self, translations: ::models::TranslationsList) -> Sense {
+  pub fn with_translations(mut self, translations: Vec<::models::TranslationsListInner>) -> Sense {
     self.translations = Some(translations);
     self
   }
 
-  pub fn translations(&self) -> Option<&::models::TranslationsList> {
+  pub fn translations(&self) -> Option<&Vec<::models::TranslationsListInner>> {
     self.translations.as_ref()
   }
 

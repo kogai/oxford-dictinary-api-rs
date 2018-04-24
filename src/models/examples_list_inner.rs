@@ -20,7 +20,7 @@ pub struct ExamplesListInner {
   #[serde(rename = "domains")]
   domains: Option<Vec<String>>,
   #[serde(rename = "notes")]
-  notes: Option<::models::CategorizedTextList>,
+  notes: Option<Vec<::models::CategorizedTextListInner>>,
   /// A particular area in which the pronunciation occurs, e.g. 'Great Britain'
   #[serde(rename = "regions")]
   regions: Option<Vec<String>>,
@@ -33,7 +33,7 @@ pub struct ExamplesListInner {
   #[serde(rename = "text")]
   text: String,
   #[serde(rename = "translations")]
-  translations: Option<::models::TranslationsList>,
+  translations: Option<Vec<::models::TranslationsListInner>>,
 }
 
 impl ExamplesListInner {
@@ -84,16 +84,16 @@ impl ExamplesListInner {
     self.domains = None;
   }
 
-  pub fn set_notes(&mut self, notes: ::models::CategorizedTextList) {
+  pub fn set_notes(&mut self, notes: Vec<::models::CategorizedTextListInner>) {
     self.notes = Some(notes);
   }
 
-  pub fn with_notes(mut self, notes: ::models::CategorizedTextList) -> ExamplesListInner {
+  pub fn with_notes(mut self, notes: Vec<::models::CategorizedTextListInner>) -> ExamplesListInner {
     self.notes = Some(notes);
     self
   }
 
-  pub fn notes(&self) -> Option<&::models::CategorizedTextList> {
+  pub fn notes(&self) -> Option<&Vec<::models::CategorizedTextListInner>> {
     self.notes.as_ref()
   }
 
@@ -165,19 +165,19 @@ impl ExamplesListInner {
     &self.text
   }
 
-  pub fn set_translations(&mut self, translations: ::models::TranslationsList) {
+  pub fn set_translations(&mut self, translations: Vec<::models::TranslationsListInner>) {
     self.translations = Some(translations);
   }
 
   pub fn with_translations(
     mut self,
-    translations: ::models::TranslationsList,
+    translations: Vec<::models::TranslationsListInner>,
   ) -> ExamplesListInner {
     self.translations = Some(translations);
     self
   }
 
-  pub fn translations(&self) -> Option<&::models::TranslationsList> {
+  pub fn translations(&self) -> Option<&Vec<::models::TranslationsListInner>> {
     self.translations.as_ref()
   }
 
